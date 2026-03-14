@@ -117,7 +117,7 @@ footer a{color:var(--blue);text-decoration:none}
       <option value="MP">MPs Only</option>
       <option value="MLA">MLAs Only</option>
     </select>
-    <select id="stateFilter" onchange="filterData()">
+    <select id="stateFilter" onchange="filterData()" disabled>
       <option value="all">All States</option>
       <option value="Andhra Pradesh 2024">Andhra Pradesh 2024</option><option value="Arunachal Pradesh 2024">Arunachal Pradesh 2024</option><option value="Assam 2021">Assam 2021</option><option value="Bihar 2025">Bihar 2025</option><option value="Chhattisgarh 2023">Chhattisgarh 2023</option><option value="Delhi 2025">Delhi 2025</option><option value="Goa 2022">Goa 2022</option><option value="Gujarat 2022">Gujarat 2022</option><option value="Haryana 2024">Haryana 2024</option><option value="Himachal Pradesh 2022">Himachal Pradesh 2022</option><option value="Jammu & Kashmir 2024">Jammu & Kashmir 2024</option><option value="Jharkhand 2024">Jharkhand 2024</option><option value="Karnataka 2023">Karnataka 2023</option><option value="Kerala 2021">Kerala 2021</option><option value="Lok Sabha 2024">Lok Sabha 2024</option><option value="Madhya Pradesh 2023">Madhya Pradesh 2023</option><option value="Maharashtra 2024">Maharashtra 2024</option><option value="Manipur 2022">Manipur 2022</option><option value="Meghalaya 2023">Meghalaya 2023</option><option value="Mizoram 2023">Mizoram 2023</option><option value="Nagaland 2023">Nagaland 2023</option><option value="Odisha 2024">Odisha 2024</option><option value="Puducherry 2021">Puducherry 2021</option><option value="Punjab 2022">Punjab 2022</option><option value="Rajasthan 2023">Rajasthan 2023</option><option value="Sikkim 2024">Sikkim 2024</option><option value="Tamil Nadu 2021">Tamil Nadu 2021</option><option value="Telangana 2023">Telangana 2023</option><option value="Tripura 2023">Tripura 2023</option><option value="Uttar Pradesh 2022">Uttar Pradesh 2022</option><option value="Uttarakhand 2022">Uttarakhand 2022</option><option value="West Bengal 2021">West Bengal 2021</option>
     </select>
@@ -170,8 +170,8 @@ function bc(n){ return n===0?'var(--green)':n<=5?'var(--gold)':n<=20?'var(--acce
 function onTypeChange(){
   const type = document.getElementById('typeFilter').value;
   const sf = document.getElementById('stateFilter');
-  if(type==='MLA'){ sf.value='all'; sf.disabled=false; }
-  else { sf.disabled=true; }
+  if(type==='MLA'){ sf.disabled=false; }
+  else { sf.value='all'; sf.disabled=true; }
   filterData();
 }
 
